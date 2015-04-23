@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AutoAvatar test</title>
+</head>
+<body>
+  <button onClick="generate()">Generate</button>
+  <br>
+  <img class="avatar" src="" alt="Press generate to get an avatar">
+
+  <script src="autoavatar.js"></script>
+  <script>
+    var generate = function(){
+      AutoAvatar.generate(function(imageUri){
+        document.querySelector('.avatar').src = imageUri;
+      }, {
+        // options
+        gridSize: 8,
+        imageSize: 256,
+        multicolored: false,
+        // hue: 100,
+        saturation: 50,
+        lightness: 50,
+        time: true
+      });
+    };
+  </script>
+</body>
+</html>
